@@ -1,0 +1,24 @@
+{
+  "name": "torsion_analyzer_local",
+  "version": "1.0.0",
+  "description": "Local GUI application of the TorsionAnalyzer",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "jasmine test/TorsionAnalyzerWrapperSpec.js"
+  },
+  "author": "Patrick Penner",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^10.1.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.4.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "jasmine": "^3.9.0"
+  }
+}

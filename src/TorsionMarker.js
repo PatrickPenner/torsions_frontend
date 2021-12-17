@@ -64,8 +64,12 @@ class TorsionMarker {
    * @param {Boolean} highlight
    */
   setHighlight (highlight) {
-    this.bondMarker.reprList[0].setParameters({ opacity: highlight ? 1.0 : 0.5 })
-    this.atomMarkers.reprList[0].setVisibility(highlight)
+    if (this.bondMarker.reprList) {
+      this.bondMarker.reprList[0].setParameters({ opacity: highlight ? 1.0 : 0.5 })
+    }
+    if (this.atomMarkers.reprList) {
+      this.atomMarkers.reprList[0].setVisibility(highlight)
+    }
   }
 
   /**
@@ -75,5 +79,13 @@ class TorsionMarker {
   setVisibility (visible) {
     this.bondMarker.setVisibility(visible)
     this.atomMarkers.setVisibility(visible)
+  }
+
+  /**
+   * Remove torsion markers from stage
+   */
+  remove () {
+    this.stage.removeComponent(this.bondMarker)
+    this.stage.removeComponent(this.atomMarkers)
   }
 }

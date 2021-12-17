@@ -9,20 +9,12 @@ class MoleculeTable {
    * @param {TorsionResultsTable} torsionResultsTable table to display the torsion results of the molecules
    * @param {Object} molecules molecules to display
    * @param {Number} availableHeight height to grow to
-   * @param {Function} downloadCallback callback for the download button
    */
-  constructor (element, stage, torsionResultsTable, molecules = [], availableHeight = 0, downloadCallback = undefined) {
+  constructor (element, stage, torsionResultsTable, molecules = [], availableHeight = 0) {
     this.element = document.getElementById(element)
-    this.element.innerHTML =
-      `<table></table>
-             <button class="btn-primary">Download TSV File</button>
-            `
+    this.element.innerHTML = '<table></table>'
     this.tableElement = this.element.getElementsByTagName('table')[0]
-    this.downloadButton = this.element.getElementsByTagName('button')[0]
-    if (downloadCallback) {
-      this.downloadButton.addEventListener('click', downloadCallback)
-    }
-    this.availableHeight = availableHeight - this.downloadButton.clientHeight
+    this.availableHeight = availableHeight
     this.stage = stage
     this.torsionResultsTable = torsionResultsTable
     this.molecules = molecules
@@ -169,7 +161,7 @@ class MoleculeTable {
    */
   resize (availableHeight = undefined) {
     if (availableHeight) {
-      this.availableHeight = availableHeight - this.downloadButton.clientHeight
+      this.availableHeight = availableHeight
     }
     const moleculeTableScrollElement = this.element.getElementsByClassName('dataTables_scrollBody')
     if (moleculeTableScrollElement.length === 1) {

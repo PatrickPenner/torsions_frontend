@@ -30,7 +30,7 @@ class MoleculeUploadForm {
         <label for="mol-file">Molecule File</label>
         <input type="file" id="mol-file" accept=".sdf">
     </div>
-    <button type="submit" class="btn btn-primary">Upload</button>
+    <button type="submit" class="btn btn-primary">Load</button>
 </form>`
   }
 

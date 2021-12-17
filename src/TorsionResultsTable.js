@@ -31,7 +31,7 @@ class TorsionResultsTable {
       autoWidth: false,
       columns: [
         { title: 'ID', data: 'id' },
-        { title: 'Angle', data: 'angle' },
+        { title: 'Angle', data: 'angle', render: (angle) => angle.toFixed(2) },
         {
           title: 'Quality',
           data: 'quality',
@@ -69,6 +69,12 @@ ${pattern}`
     this.table.clear()
     this.table.rows.add(this.molecule.torsionResults)
     this.table.draw()
+    for (const [, results] of this.resultComponentMap.entries()) {
+      for (const [, result] of results.entries()) {
+        result.torsionMarker.remove()
+      }
+    }
+    this.resultComponentMap = new Map()
     this.initTorsionMarkers()
   }
 

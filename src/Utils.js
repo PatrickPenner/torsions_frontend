@@ -14,6 +14,13 @@ class Utils {
    * @returns {Promise<Object>} structure promise
    */
   static addStructure (stage, structure, name = undefined) {
+    /*
+     structure = {
+       mol_string: string,
+       file_type: string ('pdb', 'sdf'),
+       name: string
+     }
+     */
     if (name === undefined) {
       name = structure.name
     }
