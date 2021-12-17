@@ -1,0 +1,15 @@
+html, body{
+  height: 100%;
+}
+
+tr.highlight{
+  color: #007bff;
+}
+
+.torsion-plot{
+  text-align: center;
+}
+
+.copy-button{
+  margin-right: 5px;
+}

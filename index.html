@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Torsion Analyzer</title>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/ngl.js"></script>
+    <script src="vendor/datatables.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="vendor/jquery.loading.min.js"></script>
+    <script src="src/ElementBuilder.js"></script>
+    <script src="src/Utils.js"></script>
+    <script src="src/TabPane.js"></script>
+    <script src="src/MoleculeUploadForm.js"></script>
+    <script src="src/MoleculeTable.js"></script>
+    <script src="src/TorsionResultsTable.js"></script>
+    <script src="src/TorsionPlot.js"></script>
+    <script src="src/TorsionAnalyzerApp.js"></script>
+    <script src="src/TorsionMarker.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="vendor/datatables.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div id="torsion-analyzer-app"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.app = new TorsionAnalyzerApp('torsion-analyzer-app')
+  })
+</script>
+</body>
+</html>

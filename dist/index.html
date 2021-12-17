@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Torsion Analyzer</title>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/ngl.js"></script>
+    <script src="vendor/datatables.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.loading.min.js"></script>
+    <script src="application.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="application.min.css">
+</head>
+<body>
+<div id="torsion-analyzer-app"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.app = new TorsionAnalyzerApp('torsion-analyzer-app')
+  })
+</script>
+</body>
+</html>
