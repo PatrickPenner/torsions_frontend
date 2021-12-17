@@ -37,3 +37,7 @@ cat src/TorsionResultsTable.js >> dist/application.min.js
 cat src/TorsionPlot.js >> dist/application.min.js
 cat src/TorsionMarker.js >> dist/application.min.js
 cat src/TorsionAnalyzerApp.js >> dist/application.min.js
+
+# help.html and images
+cp help.html dist/help.html
+cp -r images dist/
