@@ -109,6 +109,21 @@ class Utils {
   }
 
   /**
+   * Generate a copy button if the Clipboard API is supported by the browser
+   * @param {string} text
+   * @returns {string} empty string or copy button
+   */
+  static conditionalCopyButton (text) {
+    // check support for Clipboard API
+    try {
+      ClipboardItem
+    } catch (exception) {
+      return ''
+    }
+    return `<button class="btn-primary copy-button" onClick="Utils.copyToClipboard('${text}')">Copy</button>`
+  }
+
+  /**
    * Copy text to clipboard
    * @param {String} text
    */

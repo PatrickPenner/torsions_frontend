@@ -43,10 +43,7 @@ class TorsionResultsTable {
           data: 'patternHierarchy',
           render: (hierarchy) => {
             const pattern = hierarchy.split('|')[0]
-            return `<button class="btn-primary copy-button" onclick="Utils.copyToClipboard('${pattern}')">
-    Copy
-</button>
-${pattern}`
+            return Utils.conditionalCopyButton(pattern) + pattern
           }
         }
       ]

@@ -13,6 +13,7 @@ class TabPane {
     this.content = this.element.getElementsByClassName('tab-content')[0]
     this.firstTab = true
     this.renderFunctions = new Map()
+    this.currentTab = 'upload'
   }
 
   /**
@@ -90,6 +91,7 @@ class TabPane {
     if (id === 'help') {
       return
     }
+    this.currentTab = id
     const tabId = id + '-tab'
     this.tabs.getElementsByClassName('active')[0].classList.remove('active')
     this.content.getElementsByClassName('active')[0].classList.remove('active')

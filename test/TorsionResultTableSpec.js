@@ -102,7 +102,6 @@ describe('TorsionResultTable', function () {
     expect(cells[0].innerText).toEqual(testMolecule.torsionResults[0].id.toString())
     expect(cells[1].innerText).toEqual(testMolecule.torsionResults[0].angle.toString())
     expect(cells[2].innerText).toEqual(Utils.capitalize(testMolecule.torsionResults[0].quality))
-    expect(cells[3].innerText.split(' ')[1]).toEqual(testMolecule.torsionResults[0].patternHierarchy.split('|')[0])
   })
 
   it('sets the molecule', async function () {
@@ -119,7 +118,6 @@ describe('TorsionResultTable', function () {
     expect(cells[0].innerText).toEqual(testMolecule.torsionResults[0].id.toString())
     expect(cells[1].innerText).toEqual(testMolecule.torsionResults[0].angle.toString())
     expect(cells[2].innerText).toEqual(Utils.capitalize(testMolecule.torsionResults[0].quality))
-    expect(cells[3].innerText.split(' ')[1]).toEqual(testMolecule.torsionResults[0].patternHierarchy.split('|')[0])
   })
 
   it('highlights clicked rows', async function () {

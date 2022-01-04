@@ -23,6 +23,9 @@ class TorsionAnalyzerApp {
     window.addEventListener('keydown', (event) => {
       this.onKeydown(event)
     })
+    this.stage.signals.clicked.add((pickingProxy) => {
+      this.handleTorsionMarkerClicked(pickingProxy)
+    })
   }
 
   /**
@@ -30,7 +33,7 @@ class TorsionAnalyzerApp {
    */
   initHtml () {
     this.element.classList.add('container-fluid')
-    this.element.classList.add('h-100')
+    this.element.classList.add('flex-grow-1')
     this.element.innerHTML =
       `<div class="row h-100">
     <div class="col-sm-6 h-100">
@@ -232,5 +235,18 @@ class TorsionAnalyzerApp {
       return undefined
     }
     return await response.text()
+  }
+
+  /**
+   * Switch to torsion results when a torsion bond is clicked
+   * @param pickingProxy
+   */
+  handleTorsionMarkerClicked (pickingProxy) {
+    if (!pickingProxy || !pickingProxy.cylinder) {
+      return
+    }
+    if (this.tabPane.currentTab !== 'torsion-results') {
+      this.tabPane.switchTab('torsion-results')
+    }
   }
 }

@@ -1,15 +1,26 @@
-html, body{
-  height: 100%;
+html {
+    height: 100%;
 }
 
-tr.highlight{
-  color: #007bff;
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.torsion-plot{
-  text-align: center;
+#torsion-analyzer-app {
+    /* the NGL has issues with flex and calculating its size */
+    overflow: hidden;
 }
 
-.copy-button{
-  margin-right: 5px;
+tr.highlight {
+    color: #007bff;
+}
+
+.torsion-plot {
+    text-align: center;
+}
+
+.copy-button {
+    margin-right: 5px;
 }
